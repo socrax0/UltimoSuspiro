@@ -6,27 +6,28 @@ public class PlayerMovement : MonoBehaviour
 
     public int PlayerSpeed;
 
+    private BoxCollider2D groundCheck;
+
     private Rigidbody2D rb;
 
-    [SerializeField]
     private bool isGrounded;
 
+    [SerializeField]
     public int PlayerJumpForce;
-
-    public Transform GroundCheck1;
-
-    public LayerMask groundLayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        groundCheck = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         PlayerMov();
+        Debug.Log(groundCheck.IsTouchingLayers(3));
+
     }
 
     void PlayerMov()
@@ -36,8 +37,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = transform.position + PlayerDir * PlayerSpeed * Time.deltaTime;
 
         //Jump
-
-        isGrounded = Physics2D.OverlapCircle(GroundCheck1.position, 0.15f, groundLayer); // checks if you are within 0.15 position in the Y of the ground 
+        isGrounded = groundCheck.IsTouchingLayers(3);
 
         if (isGrounded)
         {

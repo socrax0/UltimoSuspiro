@@ -18,8 +18,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     // enemy variables
 
-    [SerializeField]
-    private int speed;
+    public int speed = 1;
 
     // Update is called once per frame
     void Update()
@@ -27,16 +26,36 @@ public class EnemyBehaviour : MonoBehaviour
         PlayerPos = Player.GetComponent<Transform>().position;
         PlayerDistance = PlayerPos - transform.position;
 
-        transform.position = transform.position + PlayerDistance.normalized * speed * Time.deltaTime;
+        EnemyMovement();
+        EnemyAttack();  
 
-        Debug.Log(transform.position);
-        Debug.DrawLine(transform.position, new Vector3(PlayerMaxDistance,0,0));  
+    }
+
+    void EnemyMovement()
+    {
+        transform.position = transform.position + PlayerDistance * speed * Time.deltaTime;
         
     }
 
     void EnemyAttack()
     {
+        if (PlayerDistance.x < PlayerMaxDistance && PlayerDistance.x > -PlayerMaxDistance)
+        {
+            speed = 0;
+            Debug.Log("Ataque ataque ataque");
+        }
+        else
+        {
+            speed = 1;
+        }
         
-        Debug.Log("Ataque ataque ataque");
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, PlayerMaxDistance);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, PlayerMaxDistance);
     }
 }
