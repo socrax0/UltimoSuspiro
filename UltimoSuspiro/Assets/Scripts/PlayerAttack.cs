@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -7,10 +8,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private GameObject Player;
 
+    private float LastPlayerDir = 1;
+
     public float damage;
 
     [SerializeField]
-    private Transform _hitPosition;
+    private Vector3 _hitDistance;
 
     [SerializeField]
     private Vector2 _hitArea;
@@ -23,7 +26,8 @@ public class PlayerAttack : MonoBehaviour
     void FixedUpdate()
     {
         BasicAttack();
-        
+        LastPlayerDir = Player.GetComponent<PlayerMovement>().LastPlayerDir;
+
     }
 
     public void BasicAttack()
@@ -37,22 +41,16 @@ public class PlayerAttack : MonoBehaviour
 
     public void Hit()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(_hitPosition.position,_hitArea,0,_enemyLayer);
-        foreach (Collider2D hitEnemy in hitEnemies)
-        {
-            Debug.Log(hitEnemy.gameObject.GetComponent<Transform>());
-        }
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.position + _hitDistance * LastPlayerDir, _hitArea,0,_enemyLayer);
+        
     }
 
     private void OnDrawGizmos()
     {
         // Define cor do gizmo (usar apenas cores padrao RGB para evitar Unicode)
-        Gizmos.color = new Color(1f, 0.55f, 0f); // equivalente a "dark orange"
+        Gizmos.color = new Color(125f,0f,0f); // equivalente a "dark orange"
 
-        // Desenha o circulo representando o alcance do ataque
-        if (_hitPosition != null)
-        {
-            Gizmos.DrawWireCube(_hitPosition.position, _hitArea);
-        }
+        Gizmos.DrawWireCube(transform.position + _hitDistance * LastPlayerDir, _hitArea);
+
     }
 }

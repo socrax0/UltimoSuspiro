@@ -4,7 +4,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // MOVEMENT VARIABLES
-    public Vector3 PlayerDir;
+    public float PlayerDir;
+
+    public float LastPlayerDir = 1;
 
     public float PlayerSpeed = 7;
 
@@ -45,8 +47,13 @@ public class PlayerMovement : MonoBehaviour
     public void PlayerMov()
     {
         //Horizontal
-        PlayerDir = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-        transform.position = transform.position + PlayerDir * PlayerSpeed * Time.deltaTime;
+        PlayerDir = Input.GetAxisRaw("Horizontal");
+        if (PlayerDir != 0) {
+            LastPlayerDir = PlayerDir;
+        }
+
+        GetComponent<SpriteRenderer>().flipX = LastPlayerDir < 0;
+        transform.position = transform.position + new Vector3(PlayerDir,0,0) * PlayerSpeed * Time.deltaTime;
 
         //Jump
         if (_isGrounded && Input.GetButton("Jump"))
