@@ -18,7 +18,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     // enemy variables
 
-    public int speed = 1;
+    public int defaultSpeed = 3;
+
+    private int speed;
 
     // Update is called once per frame
     void Update()
@@ -28,12 +30,11 @@ public class EnemyBehaviour : MonoBehaviour
 
         EnemyMovement();
         EnemyAttack();  
-
     }
 
     void EnemyMovement()
     {
-        transform.position = transform.position + PlayerDistance * speed * Time.deltaTime;
+        transform.position = transform.position + PlayerDistance.normalized * speed * Time.deltaTime;
         
     }
 
@@ -42,11 +43,12 @@ public class EnemyBehaviour : MonoBehaviour
         if (PlayerDistance.x < PlayerMaxDistance && PlayerDistance.x > -PlayerMaxDistance)
         {
             speed = 0;
-            Debug.Log("Ataque ataque ataque");
+            //Debug.Log("Ataque ataque ataque");
         }
         else
         {
-            speed = 1;
+            speed = defaultSpeed;
+            ;
         }
         
     }

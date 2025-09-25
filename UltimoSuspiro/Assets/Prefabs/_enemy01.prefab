@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 898356322699096023}
   - component: {fileID: -5119147700381680150}
   - component: {fileID: 4998089067184738200}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: _enemy01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Player: {fileID: 0}
-  PlayerMaxDistance: 0
-  speed: 1
+  PlayerMaxDistance: 2
+  defaultSpeed: 3
 --- !u!212 &898356322699096023
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -130,11 +130,11 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4998089067184738200
 BoxCollider2D:
   m_ObjectHideFlags: 0

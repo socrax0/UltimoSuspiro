@@ -28,7 +28,7 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "6720dae8-346e-4a33-a57a-c744cdcec0b5",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -37,7 +37,7 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "256142b4-3c47-4d4d-a61a-10c79a62800b",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "Hold",
                     "initialStateCheck": false
@@ -267,17 +267,6 @@
                 },
                 {
                     "name": "",
-                    "id": "e942d707-24d0-4858-989c-b47f8685aceb",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "7d5e0f7c-8a5d-4639-9298-9dac75de2cdb",
                     "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
@@ -312,10 +301,21 @@
                 {
                     "name": "",
                     "id": "4bf7fe20-1974-4190-ac3d-53d89863e0eb",
-                    "path": "<Keyboard>/enter",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "83038a80-1f41-45f7-933f-f47df9a362d1",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false

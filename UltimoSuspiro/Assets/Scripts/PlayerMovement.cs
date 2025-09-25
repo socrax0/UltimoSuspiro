@@ -1,51 +1,72 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Vector3 PlayerDir;
+    // MOVEMENT VARIABLES
+    public Vector3 PlayerDir;
 
-    public int PlayerSpeed;
+    public float PlayerSpeed = 7;
 
-    private BoxCollider2D groundCheck;
+    private RaycastHit2D groundCheck;
 
     private Rigidbody2D rb;
 
-    private bool isGrounded;
+    // JUMP VARIABLES
+    [SerializeField]
+    private int PlayerJumpForce;
+
+    private bool _isGrounded;
 
     [SerializeField]
-    public int PlayerJumpForce;
+    private Vector2 _groundCheckSize;
+
+    [SerializeField]
+    private LayerMask groundLayer;
+
+    [SerializeField]
+    private float _groundCheckDistance;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        groundCheck = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        IsGrounded();
         PlayerMov();
-        Debug.Log(groundCheck.IsTouchingLayers(3));
 
     }
 
-    void PlayerMov()
-    {   
+    public void PlayerMov()
+    {
         //Horizontal
         PlayerDir = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
         transform.position = transform.position + PlayerDir * PlayerSpeed * Time.deltaTime;
 
         //Jump
-        isGrounded = groundCheck.IsTouchingLayers(3);
-
-        if (isGrounded)
+        if (_isGrounded && Input.GetButton("Jump"))
         {
-            if (Input.GetButton("Jump"))
-            {
-                rb.AddForceY(PlayerJumpForce);
-            }
-        } 
+            rb.AddForceY(PlayerJumpForce);
+        }
     }
 
+    void IsGrounded()
+    {
+        RaycastHit2D groundCheck = Physics2D.BoxCast(transform.position, _groundCheckSize, 0, Vector2.down, _groundCheckDistance, groundLayer);
+
+        _isGrounded = groundCheck.collider;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(
+            transform.position - transform.up * _groundCheckDistance,
+            Vector3.one * _groundCheckSize
+        );
+    }
 }
