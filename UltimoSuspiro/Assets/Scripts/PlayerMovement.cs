@@ -41,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
     {
         IsGrounded();
         PlayerMov();
-
     }
 
     public void PlayerMov()

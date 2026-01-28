@@ -5,59 +5,77 @@ using UnityEngine.UIElements;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject enemy;
     // variables concerning Player interactions
     [SerializeField] 
-    private GameObject Player;
+    private GameObject player;
 
-    private Vector3 PlayerPos;
+    private Vector3 playerPos;
 
-    private Vector3 PlayerDistance;
+    private Vector3 playerDistance;
 
     [SerializeField]
-    private float PlayerMaxDistance;
+    private float playerMaxDistance;
 
-    // enemy variables
+    // enemy variables SPEED HEALTH DAMAGE
 
-    public int defaultSpeed = 3;
+    public float enemyDefaultSpeed = 1f;
 
-    private int speed;
+    private float enemySpeed;
+
+    public float enemyHealth;
+
+    public float enemyDamage;
 
     // Update is called once per frame
     void Update()
     {
-        PlayerPos = Player.GetComponent<Transform>().position;
-        PlayerDistance = PlayerPos - transform.position;
+        playerPos = player.GetComponent<Transform>().position;
+        playerDistance = playerPos - transform.position;
 
         EnemyMovement();
-        EnemyAttack();  
+        EnemyAttack();
     }
 
     void EnemyMovement()
     {
-        transform.position = transform.position + PlayerDistance.normalized * speed * Time.deltaTime;
-        
+        transform.position = transform.position + enemySpeed * Time.deltaTime * playerDistance.normalized;
     }
 
     void EnemyAttack()
     {
-        if (PlayerDistance.x < PlayerMaxDistance && PlayerDistance.x > -PlayerMaxDistance)
+        if (playerDistance.x < playerMaxDistance && playerDistance.x > -playerMaxDistance)
         {
-            speed = 0;
-            //Debug.Log("Ataque ataque ataque");
+            enemySpeed = 0;
+            Debug.Log("Ataque ataque ataque");
         }
         else
         {
-            speed = defaultSpeed;
-            ;
+            enemySpeed = enemyDefaultSpeed;
         }
         
     }
+
+    public void TakeDamage(float playerDamage)
+    {
+        enemyHealth -= playerDamage * Time.deltaTime;
+        Debug.Log(enemyHealth);
+
+        if (enemyHealth <= 0)
+        {
+            enemyDamage = 0;
+            enemy.GetComponent<SpriteRenderer>().color = Color.red;
+            Destroy(gameObject, .5f);
+        }
+    }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, PlayerMaxDistance);
+        Gizmos.DrawWireSphere(transform.position, playerMaxDistance);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, PlayerMaxDistance);
+        Gizmos.DrawWireSphere(transform.position, playerMaxDistance);
     }
 }
