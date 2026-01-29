@@ -15,6 +15,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     private Vector3 playerDistance;
 
+    private float playerHealth;
+
     [SerializeField]
     private float playerMaxDistance;
 
@@ -33,6 +35,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         playerPos = player.GetComponent<Transform>().position;
         playerDistance = playerPos - transform.position;
+        playerHealth = player.GetComponent<PlayerManager>().playerHealth;
 
         EnemyMovement();
         EnemyAttack();
@@ -48,7 +51,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (playerDistance.x < playerMaxDistance && playerDistance.x > -playerMaxDistance)
         {
             enemySpeed = 0;
-            Debug.Log("Ataque ataque ataque");
+            playerHealth = player.GetComponent<PlayerManager>().playerHealth;
         }
         else
         {

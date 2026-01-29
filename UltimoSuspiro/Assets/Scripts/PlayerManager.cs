@@ -1,16 +1,16 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public float playerHealth;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float playerMaxHealth;
+
+    public float playerSpeed;
+
+    public float playerDamage;
+
+    public float playerLifeRegen;
+
 }

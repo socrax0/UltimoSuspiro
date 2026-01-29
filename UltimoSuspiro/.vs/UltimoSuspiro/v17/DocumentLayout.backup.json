@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|c:\\users\\julio\\documents\\github\\ultimosuspiro\\ultimosuspiro\\assets\\scripts\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|c:\\users\\julio\\documents\\github\\ultimosuspiro\\ultimosuspiro\\assets\\scripts\\enemybehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemybehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "PlayerManager.cs",
+              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\PlayerManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerManager.cs",
+              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\PlayerManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T20:00:24.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PlayerAttack.cs",
               "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\PlayerAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerAttack.cs",
@@ -38,7 +55,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
@@ -50,7 +67,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EnemyBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\EnemyBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyBehaviour.cs",

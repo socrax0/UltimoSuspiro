@@ -108,6 +108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580d02c36830c1c42a50e00854314dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerHealth: 0
+  playerMaxHealth: 0
+  playerSpeed: 0
+  playerDamage: 0
+  playerLifeRegen: 0
 --- !u!114 &9170302997752053251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,8 +128,8 @@ MonoBehaviour:
   PlayerDir: 1
   LastPlayerDir: 1
   PlayerSpeed: 1
-  PlayerJumpForce: 100
-  _groundCheckSize: {x: 0.2, y: 0.2}
+  PlayerJumpForce: 60
+  _groundCheckSize: {x: 0.17, y: 0.19}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -142,9 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   player: {fileID: 2205938218478917999}
-  playerDamage: 1
-  hitDistance: {x: 0.14, y: 0, z: 0}
-  hitArea: {x: 0.18, y: 0.39}
+  playerDamage: 10
+  hitDistance: {x: 0.23, y: -0.06, z: 0}
+  hitArea: {x: 0.27, y: 0.39}
   hitboxPosition: {x: 0, y: 0}
   enemyLayer:
     serializedVersion: 2
