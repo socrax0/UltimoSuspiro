@@ -6,12 +6,7 @@ using UnityEngine.UIElements;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject player;
-
     private float lastPlayerDir = 1;
-
-    public float playerDamage;
 
     [SerializeField]
     private Vector3 hitDistance;
@@ -27,22 +22,19 @@ public class PlayerAttack : MonoBehaviour
     void FixedUpdate()
     {
         BasicAttack();
-        lastPlayerDir = player.GetComponent<PlayerMovement>().LastPlayerDir;
-        
+        lastPlayerDir = this.GetComponent<PlayerMovement>().LastPlayerDir;
     }
 
     public void BasicAttack()
     {
-        //hitboxPosition = transform.position + hitDistance * lastPlayerDir;
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.position + hitDistance * lastPlayerDir, hitArea, 0, enemyLayer);
 
-            foreach (Collider2D hitEnemy in hitEnemies)
-            {
-            //Debug.Log(hitEnemy);
-                
-            hitEnemy.gameObject.GetComponent<EnemyBehaviour>().TakeDamage(playerDamage);
+        foreach (Collider2D hitEnemy in hitEnemies)
+        {
+            //Debug.Log(hitEnemy);   
+            hitEnemy.gameObject.GetComponent<EnemyBehaviour>().TakeDamage(this.GetComponent<PlayerManager>().playerDamage);
         }
-        }
+    }
     private void OnDrawGizmos()
     {
         // Define cor do gizmo (usar apenas cores padrao RGB para evitar Unicode)

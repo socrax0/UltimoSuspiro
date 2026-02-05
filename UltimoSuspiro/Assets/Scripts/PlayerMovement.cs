@@ -3,20 +3,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // MOVEMENT VARIABLES
+    private PlayerManager PlayerManager;
+
     public float PlayerDir;
 
     public float LastPlayerDir = 1;
 
-    public float PlayerSpeed = 7;
-
-    private RaycastHit2D groundCheck;
-
     private Rigidbody2D rb;
-
-    // JUMP VARIABLES
-    [SerializeField]
-    private int PlayerJumpForce;
 
     private bool _isGrounded;
 
@@ -34,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        PlayerManager = GetComponent<PlayerManager>();
     }
 
     // Update is called once per frame
@@ -52,12 +46,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         GetComponent<SpriteRenderer>().flipX = LastPlayerDir < 0;
-        transform.position = transform.position + new Vector3(PlayerDir,0,0) * PlayerSpeed * Time.deltaTime;
+        transform.position = transform.position + PlayerManager.playerSpeed * Time.deltaTime * new Vector3(PlayerDir, 0, 0);
 
         //Jump
         if (_isGrounded && Input.GetButton("Jump"))
         {
-            rb.AddForceY(PlayerJumpForce);
+            rb.AddForceY(PlayerManager.playerJump);
         }
     }
 

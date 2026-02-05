@@ -108,11 +108,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580d02c36830c1c42a50e00854314dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerHealth: 0
-  playerMaxHealth: 0
-  playerSpeed: 0
-  playerDamage: 0
-  playerLifeRegen: 0
+  playerHealth: 100
+  playerMaxHealth: 100
+  playerSpeed: 1
+  playerJump: 60
+  playerDamage: 10
+  playerLifeRegen: 30
+  isTakingDamage: 0
+  playerColorStandart: {r: 1, g: 1, b: 1, a: 1}
+  playerColorTakingDamage: {r: 0.6901961, g: 0, b: 0.43529412, a: 1}
 --- !u!114 &9170302997752053251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,8 +131,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   PlayerDir: 1
   LastPlayerDir: 1
-  PlayerSpeed: 1
-  PlayerJumpForce: 60
   _groundCheckSize: {x: 0.17, y: 0.19}
   groundLayer:
     serializedVersion: 2

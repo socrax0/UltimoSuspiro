@@ -5,8 +5,7 @@ using UnityEngine.UIElements;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject enemy;
+
     // variables concerning Player interactions
     [SerializeField] 
     private GameObject player;
@@ -14,8 +13,6 @@ public class EnemyBehaviour : MonoBehaviour
     private Vector3 playerPos;
 
     private Vector3 playerDistance;
-
-    private float playerHealth;
 
     [SerializeField]
     private float playerMaxDistance;
@@ -30,15 +27,19 @@ public class EnemyBehaviour : MonoBehaviour
 
     public float enemyDamage;
 
+    public bool isEnemyDead = false;
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         playerPos = player.GetComponent<Transform>().position;
         playerDistance = playerPos - transform.position;
-        playerHealth = player.GetComponent<PlayerManager>().playerHealth;
 
-        EnemyMovement();
-        EnemyAttack();
+        if (!isEnemyDead)
+        {
+            EnemyMovement();
+            EnemyAttack();
+        }
     }
 
     void EnemyMovement()
@@ -50,26 +51,29 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (playerDistance.x < playerMaxDistance && playerDistance.x > -playerMaxDistance)
         {
+            player.GetComponent<PlayerManager>().isTakingDamage = true;
+            player.GetComponent<PlayerManager>().OnTakingDamage(enemyDamage);
             enemySpeed = 0;
-            playerHealth = player.GetComponent<PlayerManager>().playerHealth;
         }
+
         else
         {
+            player.GetComponent<PlayerManager>().isTakingDamage = false;
             enemySpeed = enemyDefaultSpeed;
         }
-        
     }
 
     public void TakeDamage(float playerDamage)
     {
         enemyHealth -= playerDamage * Time.deltaTime;
-        Debug.Log(enemyHealth);
+        //Debug.Log(enemyHealth);
 
         if (enemyHealth <= 0)
         {
-            enemyDamage = 0;
-            enemy.GetComponent<SpriteRenderer>().color = Color.red;
-            Destroy(gameObject, .5f);
+            isEnemyDead = true;
+            player.GetComponent<PlayerManager>().isTakingDamage = false;
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            Destroy(gameObject, .2f);
         }
     }
 
