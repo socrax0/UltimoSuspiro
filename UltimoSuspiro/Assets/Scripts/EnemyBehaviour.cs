@@ -7,7 +7,6 @@ public class EnemyBehaviour : MonoBehaviour
 {
 
     // variables concerning Player interactions
-    [SerializeField] 
     private GameObject player;
 
     private Vector3 playerPos;
@@ -32,6 +31,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        player = GameObject.FindWithTag("Player");
         playerPos = player.GetComponent<Transform>().position;
         playerDistance = playerPos - transform.position;
 
