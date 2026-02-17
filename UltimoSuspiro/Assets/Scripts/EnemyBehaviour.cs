@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class EnemyBehaviour : MonoBehaviour
 {
 
-    // variables concerning Player interactions
+    // variables Player interactions
     private GameObject player;
 
     private Vector3 playerPos;
@@ -28,10 +28,15 @@ public class EnemyBehaviour : MonoBehaviour
 
     public bool isEnemyDead = false;
 
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        player = GameObject.FindWithTag("Player");
+        
         playerPos = player.GetComponent<Transform>().position;
         playerDistance = playerPos - transform.position;
 
@@ -58,7 +63,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         else
         {
-            player.GetComponent<PlayerManager>().isTakingDamage = false;
+            //player.GetComponent<PlayerManager>().isTakingDamage = false;
             enemySpeed = enemyDefaultSpeed;
         }
     }

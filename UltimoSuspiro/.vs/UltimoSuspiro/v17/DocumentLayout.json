@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|c:\\users\\julio\\documents\\github\\ultimosuspiro\\ultimosuspiro\\assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\assets\\scripts\\enemybehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemybehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\assets\\scripts\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\assets\\scripts\\enemybehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemybehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\assets\\scripts\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F739BA68-9BF1-47BF-8F48-FBF432DED0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
@@ -42,8 +42,7 @@
               "RelativeToolTip": "Assets\\Scripts\\PlayerMovement.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T19:12:14.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T19:12:14.62Z"
             },
             {
               "$type": "Document",
@@ -53,22 +52,23 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemySpawner.cs",
               "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\EnemySpawner.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemySpawner.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAcwCMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCcAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-05T11:56:18.758Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "PlayerAttack.cs",
               "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\PlayerAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerAttack.cs",
               "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\PlayerAttack.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerAttack.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-20T18:50:44.532Z"
+              "WhenOpened": "2025-09-20T18:50:44.532Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -78,20 +78,20 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerManager.cs",
               "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\PlayerManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-27T20:00:24.235Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "EnemyBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\EnemyBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyBehaviour.cs",
               "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\UltimoSuspiro\\UltimoSuspiro\\Assets\\Scripts\\EnemyBehaviour.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyBehaviour.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowEEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-28T19:05:29.7Z",
               "EditorCaption": ""

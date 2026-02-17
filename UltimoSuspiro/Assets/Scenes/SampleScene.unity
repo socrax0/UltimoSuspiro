@@ -609,7 +609,8 @@ MonoBehaviour:
   spawnPosLeft: {fileID: 1953609067}
   spawnPosRight: {fileID: 1465125484}
   totalEnemies: 10
-  spawnDelay: 2
+  spawnDelay: 3
+  sD: 0
   enemies:
   - {fileID: 637895047580939178, guid: 6fbb340bd1934bf4686f710944ae3a47, type: 3}
   - {fileID: 3112827068002530521, guid: cb8fe7362f4f06d4d98912312dda43bd, type: 3}
@@ -1074,6 +1075,10 @@ PrefabInstance:
     - target: {fileID: 1643524110356474783, guid: ec1358d45dd2ec4409d6cf207a5ee826, type: 3}
       propertyPath: playerDamage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643524110356474783, guid: ec1358d45dd2ec4409d6cf207a5ee826, type: 3}
+      propertyPath: hitboxPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2205938218478917999, guid: ec1358d45dd2ec4409d6cf207a5ee826, type: 3}
       propertyPath: m_Name

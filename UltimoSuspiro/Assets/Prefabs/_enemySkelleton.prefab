@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae94bdfdadda1e4b8ea60890fe39581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  player: {fileID: 2205938218478917999, guid: ec1358d45dd2ec4409d6cf207a5ee826, type: 3}
   playerMaxDistance: 0.16
   enemyDefaultSpeed: 0.1
   enemyHealth: 10

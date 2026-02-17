@@ -11,11 +11,13 @@ public class PlayerManager : MonoBehaviour
 
     public float playerJump;
 
+
     public float playerDamage;
 
     public float playerLifeRegen;
 
     public bool isTakingDamage;
+
 
     public Color playerColorStandart;
 
@@ -33,6 +35,7 @@ public class PlayerManager : MonoBehaviour
     public void OnTakingDamage(float enemyDamage)
     {
         playerHealth = playerHealth - enemyDamage * Time.deltaTime;
+        isTakingDamage = false;
     }
 
     void PlayerColor()
