@@ -1,6 +1,7 @@
 using NUnit.Framework.Internal;
 using System.Threading;
 using System.Timers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -11,38 +12,33 @@ public class EnemySpawner : MonoBehaviour
     public int totalEnemies;
     
     public float spawnDelay;
-    public float sD;
+    public float sD = 0;
 
     [SerializeField]
     public GameObject[] enemies;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (totalEnemies > 0)
         {
             SpawnEnemy();
         }
-        else
-        {
-            Debug.Log("Todos os inimigos foram spawnados");
-        }
-
     }
 
     void SpawnEnemy()
     {
-        sD += Time.deltaTime;
-        if (sD > spawnDelay)
-        {
-            for (int i = 0; i < enemies.Length; i++)
+            foreach (GameObject enemy in enemies)
             {
-                //Vector3 spwPos = new Vector3(Random.Range(-1, 2), -.5f, 0);
-                Instantiate(enemies[i], spawnPosRight.position, Quaternion.identity);
+                sD += Time.deltaTime;
+                if (sD > spawnDelay)
+                {
+                    Debug.Log(enemy.name);
+                    Instantiate(enemy, spawnPosLeft.position, Quaternion.identity);
+                    totalEnemies--;
+                    sD = 0;
+                
+                }
             }
-            totalEnemies--;
-            sD = 0;
         }
         
     }
-
-}

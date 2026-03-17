@@ -40,6 +40,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1607480087584925336
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -85,6 +86,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 821509191478550134, guid: 90c4bd8e6f3026a4d800fd024da91a0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -94,7 +96,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6504746578897543760
 MonoBehaviour:
@@ -148,8 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334180ac40d15d949b45ac6b07e616b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  player: {fileID: 2205938218478917999}
-  playerDamage: 10
   hitDistance: {x: 0.23, y: -0.06, z: 0}
   hitArea: {x: 0.27, y: 0.39}
   hitboxPosition: {x: 0, y: 0}
@@ -193,7 +192,7 @@ Animator:
   m_GameObject: {fileID: 2205938218478917999}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c2160b4a550512043bcb0fb86e4bf910, type: 2}
+  m_Controller: {fileID: 9100000, guid: b8e869af6a52638429b4ae526b8d0863, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
